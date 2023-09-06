@@ -4,6 +4,10 @@ use std::path::Path;
 
 
 fn main() {
+
+    let fizzish = "fizz";
+    let result = foo_if_fizz(fizzish);
+    println!("{}", result);
     // Path to the desired file
 
     let path = Path::new("hell.txt");
@@ -23,4 +27,14 @@ fn main() {
     }
 
     // 'file' goes out of scope, and the hell.txt file gets closed
+}
+
+pub fn foo_if_fizz(fizzish: &str) -> &str {
+    if fizzish == "fizz"{
+        "foo"
+    } else if fizzish == "fuzz"{
+        "bar"
+    } else {
+        "baz"
+    }
 }
